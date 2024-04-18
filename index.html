@@ -4,17 +4,57 @@
   <head>
     <meta charset="utf-8" />
     <title>UI Design Challenge</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=0.3, maximum-scale=3.0 user-scalable=yes" >
     <script src="./index.js" type="module"></script>
   </head>
   <body>
 <style>
+challenge-controls{
+	--bg-color: rgba(255,255,255,0.8);
+	display: block;
+	position: relative;
+}
+challenge-controls section{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	position: sticky;
+	top: 3rem;
+}
 challenge-table,
-challenge-chart,
-challenge-control{display:block;}
+challenge-chart{
+	display: block;
+	width: clamp(250px, 48vw, 50rem);
+	background-color: var(--bg-color);
+}
+
+@media screen and (min-width: 770px) and (min-height: 280px){
+	challenge-table{
+		height:95vh;
+		overflow-y: auto;
+	}
+}
+@media screen and (max-width: 769px){
+	challenge-table,
+	challenge-chart{
+		width: clamp(250px, 95vw, 50rem);
+	}
+	challenge-table{
+		max-height: 50vh;
+		overflow-y: auto;
+	}
+}
+@media screen and (max-width: 380px){
+	challenge-table{
+		max-height: calc(98vh - 180px);
+	}
+}
 </style>
 <challenge-controls>
+<section>
 	<challenge-chart></challenge-chart>
 	<challenge-table></challenge-table>
+</section>
 </challenge-controls>
   </body>
 </html>

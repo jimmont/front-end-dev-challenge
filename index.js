@@ -75,6 +75,7 @@ window.customElements.define("challenge-controls", class ChallengeControls exten
 	table.data = data.table;
 	table.tableName = name;
 	chart.data = data.plot;
+	table.scrollTo(0,0);
   }
 
   change({ type, target:{value=''} }){
@@ -83,7 +84,7 @@ window.customElements.define("challenge-controls", class ChallengeControls exten
 
   render() {
 return html`
-<form>
+<form style="width:100%;position:sticky;top:0.5rem;background-color:var(--bg-color, #fff);z-index:11;">
 <label>size
 	<select @change=${ this.change }>
 	<option value="">choose</option>
@@ -100,8 +101,10 @@ return html`
 <label>streaming <button type=button>start</button>
 </label>
 -->
-<slot></slot>
 </form>
+<div style="position:relative;z-index:1;">
+	<slot></slot>
+</div>
 `;
   }
 })

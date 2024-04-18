@@ -8,13 +8,13 @@ export class ChallengeTable extends LitElement {
       }
       table {
         border: dotted #ddd;
-        min-width: 3rem;
+        min-width: 100%;
         min-height: 3rem;
         position: relative;
       }
       th{
         position: sticky;
-        top: 0;
+        top: 1rem;
         background: #fff;
         text-align: left;
       }

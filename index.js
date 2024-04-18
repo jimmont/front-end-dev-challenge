@@ -95,9 +95,11 @@ return html`
 	-->
 	</select>
 </label>
+<!--
 <br>
 <label>streaming <button type=button>start</button>
 </label>
+-->
 <slot></slot>
 </form>
 `;

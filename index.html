@@ -18,35 +18,28 @@ challenge-controls section{
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	position: sticky;
-	top: 3rem;
+	height: calc(100vh - 3rem);
+	overflow: auto;
 }
 challenge-table,
 challenge-chart{
 	display: block;
-	width: clamp(250px, 48vw, 50rem);
+	width: 50%;
 	background-color: var(--bg-color);
 }
-
-@media screen and (min-width: 770px) and (min-height: 280px){
-	challenge-table{
-		height:95vh;
-		overflow-y: auto;
-	}
+challenge-table{
+	height: 100%;
+	overflow-y: auto;
 }
-@media screen and (max-width: 769px){
+
+@media screen and (max-width: 769px) and (min-height: 400px){
+	challenge-controls section{
+		flex-flow: column;
+	}
 	challenge-table,
 	challenge-chart{
-		width: clamp(250px, 95vw, 50rem);
-	}
-	challenge-table{
-		max-height: 50vh;
-		overflow-y: auto;
-	}
-}
-@media screen and (max-width: 380px){
-	challenge-table{
-		max-height: calc(98vh - 180px);
+		width: 100%;
+		height: auto;
 	}
 }
 </style>

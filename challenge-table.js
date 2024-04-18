@@ -4,10 +4,12 @@ export class ChallengeTable extends LitElement {
   static get styles() {
     return css`
       :host {
-        color: red;
+        color: #000;
       }
       table {
-        border: dashed purple;
+        border: dotted #ddd;
+        min-width: 3rem;
+        min-height: 3rem;
       }
     `;
   }
